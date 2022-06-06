@@ -25,6 +25,11 @@ return new class extends Migration
             ->constrained('productos')
             ->cascadeOnUpdate()
             ->nullOnDelete();
+            $table->foreignId('id_negocio')
+            ->nulleable()
+            ->constrained('negocios')
+            ->cascadeOnUpdate()
+            ->nullOnDelete();
             $table->integer('cantidad');
             $table->integer('precio');
             $table->string('nombre');

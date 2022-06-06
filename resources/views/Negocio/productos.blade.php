@@ -291,9 +291,9 @@
     <header>
         <div class="header_style">
             <div class="space_header"><img class="header_image_icon" src="images/logoColor2.png" alt="logoColor2"></div>
-            <div class="adjust_menu"><a href="{{ route('verPedidos') }}"><i class="material-symbols-outlined" style="font-size:36px">file_open</i> pedidos</a></div>
-            <div class="adjust_menu"><a href="{{ route('inicio') }}"><i href="homepage.html" class="material-icons" style="font-size:36px">home</i> home</a></div>
-            <div class="adjust_menu"><a href="{{ route('carrito',1) }}"><i class="material-icons" style="font-size:36px">add_shopping_cart</i> carrito</a></div>
+            <div class="adjust_menu"><a href="{{ route('verPedidos',$id) }}"><i class="material-symbols-outlined" style="font-size:36px">file_open</i> pedidos</a></div>
+            <div class="adjust_menu"><a href="{{ route('inicio',$id) }}"><i href="homepage.html" class="material-icons" style="font-size:36px">home</i> home</a></div>
+            <div class="adjust_menu"><a href="{{ route('carrito',$id) }}"><i class="material-icons" style="font-size:36px">add_shopping_cart</i> carrito</a></div>
             <div class="adjust_menu"><a href="{{ route('loginUser') }}"><i class="material-icons" style="font-size:36px">account_box</i> salir</a></div>
         </div>
         <div class="margin"></div>
@@ -321,7 +321,7 @@
               </tr>
             </thead>
             @foreach ($productos as $producto)
-                <form method="POST" action="{{ route('guardarProducto') }}">    
+                <form method="POST" action="{{ route('guardarProducto',[$producto->id,$id,$negocio->id]) }}">    
                     @csrf
                     <tbody>
                         <tr>

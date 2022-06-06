@@ -16,18 +16,18 @@ class PedidosController extends Controller
     {
         //
         $carritos= Carritos::all()->where('id_user','=',$id); //para sacar valores de carrito
-        $total=0;//obtiene TOTAL a pagar
-        foreach ($carritos as $producto) {
+        //$total=0;//obtiene TOTAL a pagar X PRODUCTO
+        /*foreach ($carritos as $producto) {
             $cantidad = $producto->cantidad;
             $total +=($cantidad * $producto->precio);
-        }
+        }*/
         foreach ($carritos as $carrito) {
             $pedidos = new Pedidos;
-            $pedidos->id_user = 1;
-            $pedidos->id_negocio = 1;
+            $pedidos->id_user = $id;
+            $pedidos->id_negocio = $carrito->id_negocio;
             $pedidos->id_producto = $carrito->id_producto;
             $pedidos->nombre = $carrito->nombre;
-            $pedidos->total = $total;
+            $pedidos->total = ($carrito->precio*$carrito->cantidad);
             $pedidos->cantidad = $carrito->cantidad;
                     //actualizar tabla productos
                 $productos = Productos::all()->where('id','=',$carrito->id_producto);
@@ -46,10 +46,10 @@ class PedidosController extends Controller
         return redirect()->back();
     }
 
-    public function show()
+    public function show($id)
     {
 
-        $pedidos = Pedidos::all()->where('id_user','=',1);
-        return view('UsuarioNormal.pedidos',compact('pedidos'));
+        $pedidos = Pedidos::all()->where('id_user','=',$id);
+        return view('UsuarioNormal.pedidos',compact('pedidos','id'));
     }
 }

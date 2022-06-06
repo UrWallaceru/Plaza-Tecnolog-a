@@ -24,7 +24,7 @@ use App\Models\Negocios;
 
 //USUARIO CONTROLLER
 Route::get('/',[App\Http\Controllers\UsuarioController::class,'loginUser'])->name('loginUser');
-Route::get('/inicio',[App\Http\Controllers\UsuarioController::class,'index'])->name('inicio');
+Route::get('/inicio{id}',[App\Http\Controllers\UsuarioController::class,'index'])->name('inicio');
 Route::get('/crearUsuario',[App\Http\Controllers\UsuarioController::class,'create'])->name('crearUsuario');
 Route::post('/verificar',[App\Http\Controllers\UsuarioController::class,'verificar'])->name('verificar');
 Route::post('/crear',[App\Http\Controllers\UsuarioController::class,'store'])->name('crear');
@@ -40,14 +40,14 @@ Route::post('/guardarArticulo/{id}',[App\Http\Controllers\DueñonegocioControlle
 Route::post('/actualizarArticulo/{id}',[App\Http\Controllers\DueñonegocioController::class,'update'])->name('actualizarArticulo');
 
 //NEGOCIO CONTROLLER
-Route::get('/negocio/{id}',[App\Http\Controllers\NegociosController::class,'show'])->name('negocio');
+Route::get('/negocio/{idLocal}/user/{id}',[App\Http\Controllers\NegociosController::class,'show'])->name('negocio');
 
 //CARRITO CONTROLLER
 Route::get('/carrito/{id}',[App\Http\Controllers\CarritoController::class,'show'])->name('carrito');
 Route::delete('/carrito/eliminarProducto/{id}',[App\Http\Controllers\CarritoController::class,'destroy'])->name('eliminarProducto');
-Route::post('/guardarProducto',[App\Http\Controllers\CarritoController::class,'store'])->name('guardarProducto');
+Route::post('/guardarProducto/{idProducto}/{id}/{idNegocio}',[App\Http\Controllers\CarritoController::class,'store'])->name('guardarProducto');
 Route::post('/actualizarProducto/{id}',[App\Http\Controllers\CarritoController::class,'update'])->name('actualizarProducto');
 
 //Pedidos controller
 Route::post('/generarPedido/{id}',[App\Http\Controllers\PedidosController::class,'store'])->name('generarPedido');
-Route::get('/pedidos',[App\Http\Controllers\PedidosController::class,'show'])->name('verPedidos');
+Route::get('/pedidos/{id}',[App\Http\Controllers\PedidosController::class,'show'])->name('verPedidos');

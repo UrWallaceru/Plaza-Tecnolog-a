@@ -22,7 +22,7 @@ class CarritoController extends Controller
             $cantidad = $producto->cantidad;
             $total +=($cantidad * $producto->precio);
         }
-        return view('UsuarioNormal.carrito',compact('productos','total') );
+        return view('UsuarioNormal.carrito',compact('productos','total','id') );
     }
 
     public function create()
@@ -30,18 +30,19 @@ class CarritoController extends Controller
         return 'FORMULARIO PRODUCTO';
     }
 
-    public function store(Request $request)
+    public function store(Request $request,$idProducto,$id,$idNegocio)
     {
         //
         $compras = new Carritos;
-        $compras->id_user = 1;
+        $compras->id_user = $id;
         $compras->id_producto = $request->input('id_producto');
         $compras->cantidad = $request->input('cantidad');
         $compras->precio = $request->input('precio');
         $compras->nombre = $request->input('nombre');
+        $compras->id_negocio = $idNegocio;
         $compras->save();
-        $id=$compras->id;
-        return redirect()->route('inicio');
+        $idProducto=$compras->id;
+        return redirect()->route('inicio',compact('id'));
     }
 
     public function destroy($id)

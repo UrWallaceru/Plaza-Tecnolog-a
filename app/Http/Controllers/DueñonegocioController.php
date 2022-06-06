@@ -15,7 +15,7 @@ class DueñonegocioController extends Controller
     public function show($id)
     {
 
-        $pedidos = Pedidos::all()->where('id_user','=',$id);
+        $pedidos = Pedidos::all()->where('id_negocio','=',$id);
         return view('DueñoNegocio.pedidos',compact('pedidos','id'));
     }
 

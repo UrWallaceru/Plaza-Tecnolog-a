@@ -9,12 +9,12 @@ use Illuminate\Http\Request;
 class UsuarioController extends Controller
 {
 
-    public function index()
+    public function index($id)
     {
         //home
         $negocios=Negocios::all();
         //$usuario=User::findOrFail($id);
-        return view('UsuarioNormal.index', compact('negocios') );
+        return view('UsuarioNormal.index', compact('negocios','id') );
         //return $usuario;
     }
 

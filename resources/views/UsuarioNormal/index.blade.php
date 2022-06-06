@@ -286,9 +286,9 @@
     <header>
         <div class="header_style">
             <div class="space_header"><img class="header_image_icon" src="images/logoColor2.png" alt="logoColor2"></div>
-            <div class="adjust_menu"><a href="{{ route('verPedidos') }}"><i class="material-symbols-outlined" style="font-size:36px">file_open</i> pedidos</a></div>
-            <div class="adjust_menu"><a href="{{ route('inicio') }}"><i href="homepage.html" class="material-icons" style="font-size:36px">home</i> home</a></div>
-            <div class="adjust_menu"><a href="{{ route('carrito',1) }}"><i class="material-icons" style="font-size:36px">add_shopping_cart</i> carrito</a></div>
+            <div class="adjust_menu"><a href="{{ route('verPedidos',$id) }}"><i class="material-symbols-outlined" style="font-size:36px">file_open</i> pedidos</a></div>
+            <div class="adjust_menu"><a href="{{ route('inicio',$id) }}"><i href="homepage.html" class="material-icons" style="font-size:36px">home</i> home</a></div>
+            <div class="adjust_menu"><a href="{{ route('carrito',$id) }}"><i class="material-icons" style="font-size:36px">add_shopping_cart</i> carrito</a></div>
             <div class="adjust_menu"><a href="{{ route('loginUser') }}"><i class="material-icons" style="font-size:36px">account_box</i> salir</a></div>
         </div>
         <div class="margin"></div>
@@ -341,7 +341,7 @@
                     <div class="locals_style">
                         <div class="col m-6">
                             <div class="locals">
-                                <a href="{{ route('negocio',$negocio->id) }}"><img src="images/local.jpg" style="height: 20%; width: 20%;" alt=""></a>
+                                <a href="{{ route('negocio',[$negocio->id,$id]) }}"><img src="images/local.jpg" style="height: 20%; width: 20%;" alt=""></a>
                                 <div><p class="order_1">{{$negocio->nombre}}</p></div>
                                 <div><p class="order_2">{{$negocio->numLocal}}</p></div>
                             </div>

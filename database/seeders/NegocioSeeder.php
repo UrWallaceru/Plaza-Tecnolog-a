@@ -87,6 +87,14 @@ class NegocioSeeder extends Seeder
         $negocio1->user_id = "2";
         $negocio1->save();
 
+        $productos1 = new Productos;
+        $productos1->nombre = "bocinas";
+        $productos1->descripcion = "bocinas bonitas de color azul";
+        $productos1->precio = "200";
+        $productos1->id_negocio = "2";
+        $productos1->cantidad = "10";
+        $productos1->save();
+
         //
         $usuario1= new User;
         $usuario1->name = "Pedro";
@@ -100,6 +108,14 @@ class NegocioSeeder extends Seeder
         $negocio1->numLocal = "AC-3";
         $negocio1->user_id = "3";
         $negocio1->save();
+
+        $productos1 = new Productos;
+        $productos1->nombre = "Pulsera inteligente";
+        $productos1->descripcion = "Capaz de hacer tus tareas:D";
+        $productos1->precio = "800";
+        $productos1->id_negocio = "3";
+        $productos1->cantidad = "3";
+        $productos1->save();
 
         //
         $usuario1= new User;
@@ -115,6 +131,14 @@ class NegocioSeeder extends Seeder
         $negocio1->user_id = "4";
         $negocio1->save();
 
+        $productos1 = new Productos;
+        $productos1->nombre = "Lampara LED";
+        $productos1->descripcion = "Lampara de luz parpadeante";
+        $productos1->precio = "90";
+        $productos1->id_negocio = "4";
+        $productos1->cantidad = "10";
+        $productos1->save();
+
         //
         $usuario1= new User;
         $usuario1->name = "Victor";
@@ -129,18 +153,12 @@ class NegocioSeeder extends Seeder
         $negocio1->user_id = "5";
         $negocio1->save();
 
-        //
-        $usuario1= new User;
-        $usuario1->name = "Lucas";
-        $usuario1->email = "Lucas@gmail.com";
-        $usuario1->password = "12345678";
-        $usuario1->tipo = "1";
-        $usuario1->save();
-
-        $negocio1 = new Negocios;
-        $negocio1->nombre = "Local Lucas";
-        $negocio1->numLocal = "AC-6";
-        $negocio1->user_id = "6";
-        $negocio1->save();
+        $productos1 = new Productos;
+        $productos1->nombre = "Sable de luz";
+        $productos1->descripcion = "Replica de sable de luz funcional";
+        $productos1->precio = "10000";
+        $productos1->id_negocio = "5";
+        $productos1->cantidad = "2";
+        $productos1->save();
     }
 }

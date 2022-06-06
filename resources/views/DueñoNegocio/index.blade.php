@@ -323,8 +323,9 @@
                             <th scope="row"><input class="" type="textarea" value="{{$producto->descripcion}}" name="descripcion"></th>
                             <th scope="row"><input class="" type="text" value="{{$producto->precio}}" name="precio"></th>
                             <th scope="row"><input class="" type="number" name="cantidad" value={{$producto->cantidad}}></th>
-                            <td><input type="submit" value="Editar">
-                </form>
+                            <td><input type="submit" value="Editar"></td>
+                </form>     
+                            <td>
                                 <form action="{{  route('eliminarProductoLocal',$producto->id) }}" method ="POST">
                                     @csrf
                                     @method('DELETE')
