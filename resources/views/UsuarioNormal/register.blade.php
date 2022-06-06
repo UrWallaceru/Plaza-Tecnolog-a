@@ -164,6 +164,7 @@
                     <div class="spacement"><input class="" type="text" placeholder="Nombre" name="name"></div>
                     <div class="spacement"><input class="" type="text" placeholder="Email" name="correo"></div>
                     <div class="spacement"><input class="" type="password" placeholder="contraseña" name="password"></div>
+                    <input class="" type="hidden" placeholder="number" name="tipo" value="2">
                     <div class="spacement"><input type="submit" value="Enviar"></div>
                 </form>
             </div>

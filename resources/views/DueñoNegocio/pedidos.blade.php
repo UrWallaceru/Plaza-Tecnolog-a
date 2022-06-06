@@ -299,44 +299,35 @@
         <div class="header_color"></div>
         <div class="margin"></div>
     </header>
+    
+
 
     <div class="tabla_productos">
-        <div><h1>Productos de {{$negocio->nombre}}</h1></div>
+        <div><h1>Lista de pedidos del local</h1></div>
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Cantidad</th>
+                <th scope="col">ID pedido</th>
+                <th scope="col">Referencia</th>
+                <th scope="col">ID usuario</th>
+                <th scope="col">Producto</th>
+                <th scope="col">total</th>
+                <th scope="col">cantidad</th>
               </tr>
             </thead>
-            <!--<input type="submit" value="Agregar Producto">-->
-            <a href="{{ route('crearProducto',$negocio->id) }}"><button type="button" class="btn btn-primary">Agregar Producto</button></a>
-            
-            @foreach ($productos as $producto)
-                <form method="POST" action="{{ route('actualizarArticulo',$producto->id) }}">    
-                    @csrf
+            @foreach ($pedidos as $pedido)  
                     <tbody>
-                        <tr>  
-                            <th scope="row"><input class="" type="text" value="{{$producto->nombre}}" name="nombre"></th>
-                            <th scope="row"><input class="" type="textarea" value="{{$producto->descripcion}}" name="descripcion"></th>
-                            <th scope="row"><input class="" type="text" value="{{$producto->precio}}" name="precio"></th>
-                            <th scope="row"><input class="" type="number" name="cantidad" value={{$producto->cantidad}}></th>
-                            <td><input type="submit" value="Editar">
-                </form>
-                                <form action="{{  route('eliminarProductoLocal',$producto->id) }}" method ="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <input type="submit" value="Eliminar">
-                                </form>
-                            </td>
+                        <tr>
+                            <th scope="row"><input class="" type="text" value="{{$pedido->id}}" name="id" readonly></th>
+                            <th scope="row"><input class="" type="text" value="{{$pedido->referencia}}" name="referencia" readonly></th>
+                            <td><input type="text" name="id_negocio" value="{{$pedido->id_user}}" readonly></td>
+                            <td><input type="text" name="nombre" value="{{$pedido->nombre}}" readonly></td>
+                            <td><input type="text" name="nombre" value="{{$pedido->total}}" readonly></td>
+                            <td><input type="text" name="nombre" value="{{$pedido->cantidad}}" readonly></td>
                         </tr>
                     </tbody>
             @endforeach
-          </table>
-
-        
+          </table>                 
     </div>
 
     <div class="margin"></div>

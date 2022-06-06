@@ -31,8 +31,13 @@ Route::post('/crear',[App\Http\Controllers\UsuarioController::class,'store'])->n
 
 //DUEÑO NEGOCIO CONTROLLER
 Route::get('/local/{id}',[App\Http\Controllers\DueñonegocioController::class,'index'])->name('local');
+Route::get('/pedidosLocal/{id}',[App\Http\Controllers\DueñonegocioController::class,'show'])->name('pedidosLocal');
 Route::get('/crearDueño',[App\Http\Controllers\DueñonegocioController::class,'create'])->name('crearDueño');
+Route::get('/crearProducto/{id}',[App\Http\Controllers\DueñonegocioController::class,'createProducto'])->name('crearProducto');
+Route::delete('/eliminarProductoLocal/{id}',[App\Http\Controllers\DueñonegocioController::class,'destroy'])->name('eliminarProductoLocal');
 Route::post('/guardarDueño',[App\Http\Controllers\DueñonegocioController::class,'store'])->name('guardarDueño');
+Route::post('/guardarArticulo/{id}',[App\Http\Controllers\DueñonegocioController::class,'storeArticulo'])->name('guardarArticulo');
+Route::post('/actualizarArticulo/{id}',[App\Http\Controllers\DueñonegocioController::class,'update'])->name('actualizarArticulo');
 
 //NEGOCIO CONTROLLER
 Route::get('/negocio/{id}',[App\Http\Controllers\NegociosController::class,'show'])->name('negocio');

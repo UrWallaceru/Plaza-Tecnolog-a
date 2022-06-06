@@ -301,7 +301,6 @@
     </header>
 
     <div class="tabla_productos">
-        <div><h1>Productos de {{$negocio->nombre}}</h1></div>
         <table class="table">
             <thead>
               <tr>
@@ -311,29 +310,19 @@
                 <th scope="col">Cantidad</th>
               </tr>
             </thead>
-            <!--<input type="submit" value="Agregar Producto">-->
-            <a href="{{ route('crearProducto',$negocio->id) }}"><button type="button" class="btn btn-primary">Agregar Producto</button></a>
-            
-            @foreach ($productos as $producto)
-                <form method="POST" action="{{ route('actualizarArticulo',$producto->id) }}">    
+                <form method="POST" action="{{ route('guardarArticulo',$id) }}">    
                     @csrf
                     <tbody>
                         <tr>  
-                            <th scope="row"><input class="" type="text" value="{{$producto->nombre}}" name="nombre"></th>
-                            <th scope="row"><input class="" type="textarea" value="{{$producto->descripcion}}" name="descripcion"></th>
-                            <th scope="row"><input class="" type="text" value="{{$producto->precio}}" name="precio"></th>
-                            <th scope="row"><input class="" type="number" name="cantidad" value={{$producto->cantidad}}></th>
-                            <td><input type="submit" value="Editar">
-                </form>
-                                <form action="{{  route('eliminarProductoLocal',$producto->id) }}" method ="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <input type="submit" value="Eliminar">
-                                </form>
-                            </td>
+                            <th scope="row"><input class="" type="text" name="nombre"></th>
+                            <th scope="row"><textarea name="descripcion"></textarea></th>
+                            <th scope="row"><input class="" type="number" name="precio"></th>
+                            <th scope="row"><input class="" type="number" name="cantidad"></th>
+                            <th scope="row"><input value="{{$id}}" type="hidden" name="id_negocio"></th>
+                            <th><input type="submit" value="Registrar"></th>
                         </tr>
                     </tbody>
-            @endforeach
+                </form>
           </table>
 
         

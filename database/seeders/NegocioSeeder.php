@@ -48,6 +48,7 @@ class NegocioSeeder extends Seeder
         $usuario1->name = "Wallace";
         $usuario1->email = "wallace@gmail.com";
         $usuario1->password = "12345678";
+        $usuario1->tipo = "1";
         $usuario1->save();
 
         $negocio1 = new Negocios;
@@ -77,6 +78,7 @@ class NegocioSeeder extends Seeder
         $usuario1->name = "María";
         $usuario1->email = "maria@gmail.com";
         $usuario1->password = "12345678";
+        $usuario1->tipo = "1";
         $usuario1->save();
 
         $negocio1 = new Negocios;
@@ -90,6 +92,7 @@ class NegocioSeeder extends Seeder
         $usuario1->name = "Pedro";
         $usuario1->email = "pedro@gmail.com";
         $usuario1->password = "12345678";
+        $usuario1->tipo = "1";
         $usuario1->save();
 
         $negocio1 = new Negocios;
@@ -103,6 +106,7 @@ class NegocioSeeder extends Seeder
         $usuario1->name = "Saul";
         $usuario1->email = "saul@@gmail.com";
         $usuario1->password = "12345678";
+        $usuario1->tipo = "1";
         $usuario1->save();
 
         $negocio1 = new Negocios;
@@ -116,6 +120,7 @@ class NegocioSeeder extends Seeder
         $usuario1->name = "Victor";
         $usuario1->email = "victor@gmail.com";
         $usuario1->password = "12345678";
+        $usuario1->tipo = "1";
         $usuario1->save();
 
         $negocio1 = new Negocios;
@@ -129,6 +134,7 @@ class NegocioSeeder extends Seeder
         $usuario1->name = "Lucas";
         $usuario1->email = "Lucas@gmail.com";
         $usuario1->password = "12345678";
+        $usuario1->tipo = "1";
         $usuario1->save();
 
         $negocio1 = new Negocios;

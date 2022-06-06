@@ -167,6 +167,7 @@
                     <div class="spacement"><input class="" type="text" placeholder="Codigo de acceso" name="codigo"></div>
                     <div class="spacement"><input class="" type="text" placeholder="Nombre local" name="nomLocal"></div>
                     <div class="spacement"><input class="" type="text" placeholder="Numero local" name="numLocal"></div>
+                    <input class="" type="hidden" placeholder="number" name="tipo" value="1">
                     <div class="spacement"><input type="submit" value="Enviar"></div>
                 </form>
             </div>

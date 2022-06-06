@@ -37,6 +37,7 @@ class UsuarioController extends Controller
         $usuario->name = $request->input('name');
         $usuario->email = $request->input('correo');
         $usuario->password = $request->input('password');
+        $usuario->tipo = $request->input('tipo');
         $usuario->save();
         return view('UsuarioNormal.login');
     }
@@ -50,7 +51,11 @@ class UsuarioController extends Controller
         foreach ($usuario as $usr) {
             if ($email == $usr->email &&  $pass == $usr->password) {
                 $id = $usr->id;
-                return redirect()->route('inicio',$id);
+                //IF = 1 ... dueño de negocio ELSE Usuario
+                if ($usr->tipo == 1) {
+                    return redirect()->route('local',$id);
+                }else return redirect()->route('inicio',$id);
+                //
             }
         }
         return 'No encontrado';//view('UsuarioNormal.login');
